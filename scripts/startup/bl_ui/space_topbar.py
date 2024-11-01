@@ -438,6 +438,8 @@ class TOPBAR_MT_file_import(Menu):
 
         if bpy.app.build_options.io_wavefront_obj:
             self.layout.operator("wm.obj_import", text="Wavefront (.obj)")
+        if bpy.app.build_options.io_ueformat:
+            self.layout.operator("wm.ueformat_import", text="UEFormat (.uemodel/.ueanim)")
         if bpy.app.build_options.io_ply:
             self.layout.operator("wm.ply_import", text="Stanford PLY (.ply)")
         if bpy.app.build_options.io_stl:

@@ -880,6 +880,7 @@ class WM_OT_operator_presets_cleanup(Operator):
                 "WM_OT_gpencil_import_svg",
                 "WM_OT_obj_export",
                 "WM_OT_obj_import",
+                "WM_OT_ueformat_import",
                 "WM_OT_ply_export",
                 "WM_OT_ply_import",
                 "WM_OT_stl_export",

@@ -271,6 +271,9 @@ static FileSelectParams *fileselect_ensure_updated_file_params(SpaceFile *sfile)
     if ((prop = RNA_struct_find_property(op->ptr, "filter_obj"))) {
       params->filter |= RNA_property_boolean_get(op->ptr, prop) ? int(FILE_TYPE_OBJECT_IO) : 0;
     }
+    if ((prop = RNA_struct_find_property(op->ptr, "filter_ueformat"))) {
+      params->filter |= RNA_property_boolean_get(op->ptr, prop) ? int(FILE_TYPE_UEFORMAT) : 0;
+    }
     if ((prop = RNA_struct_find_property(op->ptr, "filter_volume"))) {
       params->filter |= RNA_property_boolean_get(op->ptr, prop) ? int(FILE_TYPE_VOLUME) : 0;
     }

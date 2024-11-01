@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later */
 
 /** \file
- * \ingroup collada
+ * \ingroup io/editor
  */
 
 #include "io_ops.hh" /* own include */
@@ -26,6 +26,7 @@
 #include "io_drop_import_file.hh"
 #include "io_gpencil.hh"
 #include "io_obj.hh"
+#include "io_ueformat_ops.hh"
 #include "io_ply_ops.hh"
 #include "io_stl_ops.hh"
 
@@ -70,6 +71,12 @@ void ED_operatortypes_io()
   WM_operatortype_append(WM_OT_obj_export);
   WM_operatortype_append(WM_OT_obj_import);
   ed::io::obj_file_handler_add();
+#endif
+
+#ifdef WITH_IO_UEFORMAT
+  // WM_operatortype_append(WM_OT_ueformat_export);
+  WM_operatortype_append(WM_OT_ueformat_import);
+  ed::io::ueformat_file_handler_add();
 #endif
 
 #ifdef WITH_IO_PLY

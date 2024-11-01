@@ -186,6 +186,9 @@ void WM_operator_properties_filesel(wmOperatorType *ot,
                          "");
   RNA_def_property_flag(prop, PROP_HIDDEN | PROP_SKIP_SAVE);
   prop = RNA_def_boolean(
+      ot->srna, "filter_ueformat", (filter & FILE_TYPE_UEFORMAT) != 0, "Filter ueformat files", "");
+  RNA_def_property_flag(prop, PROP_HIDDEN | PROP_SKIP_SAVE);
+  prop = RNA_def_boolean(
       ot->srna, "filter_folder", (filter & FILE_TYPE_FOLDER) != 0, "Filter folders", "");
   RNA_def_property_flag(prop, PROP_HIDDEN | PROP_SKIP_SAVE);
   prop = RNA_def_boolean(

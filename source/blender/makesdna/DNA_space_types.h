@@ -1122,6 +1122,7 @@ typedef enum eFileSel_File_Types {
   FILE_TYPE_OBJECT_IO = (1 << 17),
   FILE_TYPE_USD = (1 << 18),
   FILE_TYPE_VOLUME = (1 << 19),
+  FILE_TYPE_UEFORMAT = (1 << 19),
 
   FILE_TYPE_ASSET = (1 << 28),
   /** An FS directory (i.e. S_ISDIR on its path is true). */

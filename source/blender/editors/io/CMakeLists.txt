@@ -15,6 +15,7 @@ set(INC
   ../../io/stl
   ../../io/usd
   ../../io/wavefront_obj
+  ../../io/ueformat
   ../../makesrna
   ../../windowmanager
   ${CMAKE_BINARY_DIR}/source/blender/makesrna
@@ -38,6 +39,7 @@ set(SRC
   io_stl_ops.cc
   io_usd.cc
   io_utils.cc
+  io_ueformat_ops.cc
 
   io_alembic.hh
   io_cache.hh
@@ -50,6 +52,7 @@ set(SRC
   io_stl_ops.hh
   io_usd.hh
   io_utils.hh
+  io_ueformat_ops.hh
 )
 
 set(LIB
@@ -74,6 +77,13 @@ if(WITH_IO_WAVEFRONT_OBJ)
     bf_io_wavefront_obj
   )
   add_definitions(-DWITH_IO_WAVEFRONT_OBJ)
+endif()
+
+if(WITH_IO_UEFORMAT)
+  list(APPEND LIB
+    bf_io_ueformat
+  )
+  add_definitions(-DWITH_IO_UEFORMAT)
 endif()
 
 if(WITH_IO_PLY)

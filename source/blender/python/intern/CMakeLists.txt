@@ -320,6 +320,10 @@ if(WITH_IO_WAVEFRONT_OBJ)
   add_definitions(-DWITH_IO_WAVEFRONT_OBJ)
 endif()
 
+if(WITH_IO_UEFORMAT)
+  add_definitions(-DWITH_IO_UEFORMAT)
+endif()
+
 if(WITH_IO_PLY)
   add_definitions(-DWITH_IO_PLY)
 endif()
