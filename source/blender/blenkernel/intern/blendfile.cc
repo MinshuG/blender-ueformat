@@ -939,6 +939,12 @@ static void setup_app_data(bContext *C,
         }
       }
     }
+
+    if (mode != LOAD_UI) {
+      LISTBASE_FOREACH (bScreen *, screen, &bfd->main->screens) {
+        BKE_screen_runtime_refresh_for_blendfile(screen);
+      }
+    }
   }
 
   /* Logic for 'track_undo_scene' is to keep using the scene which the active screen has, as long
@@ -1422,6 +1428,7 @@ UserDef *BKE_blendfile_userdef_from_defaults()
         "io_scene_gltf2",
         "cycles",
         "pose_library",
+        "bl_pkg",
     };
     for (int i = 0; i < ARRAY_SIZE(addons); i++) {
       bAddon *addon = BKE_addon_new();
